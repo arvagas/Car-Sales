@@ -33,7 +33,16 @@ export function reducer(state = initialState, action) {
                 store: state.store.filter(item => action.payload.id !== item.id)
             }
         case REMOVE_FEATURE :
-            return state
+            console.log('REMOVE_FEATURE CALLED')
+            return {
+                ...state,
+                additionalPrice: state.additionalPrice - action.payload.price,
+                car: {
+                    ...state.car,
+                    features: state.car.features.filter(item => action.payload.id !== item.id)
+                },
+                store: [...state.store, action.payload]
+            }
         default :
             return state
     }
