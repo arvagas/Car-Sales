@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
 import App from './App'
-import { reducer } from './reducer/reducer'
+import { reducer } from './reducer'
 
 import 'bulma/css/bulma.css'
 import './styles.scss'
