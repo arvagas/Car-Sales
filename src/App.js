@@ -14,7 +14,7 @@ const App = () => {
         <Header />
         <AddedFeatures />
       </div>
-      <div className="box">
+      <div className="box add-features">
         <AdditionalFeatures />
         <Total />
       </div>
