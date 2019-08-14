@@ -2,22 +2,27 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import AdditionalFeature from './AdditionalFeature'
+import { addFeature } from '../actions/'
 
-const AdditionalFeatures = props => {
-  return (
-    <div className="content">
-      <h4>Additional Features</h4>
-      {props.store.length ? (
-        <ol type="1">
-          {props.store.map(item => (
-            <AdditionalFeature key={item.id} feature={item} />
-          ))}
-        </ol>
-      ) : (
-        <p>Nice looking car!</p>
-      )}
-    </div>
-  )
+// const AdditionalFeatures = props => {
+class AdditionalFeatures extends React.Component {
+
+  render() {
+    return (
+      <div className="content">
+        <h4>Additional Features</h4>
+        {this.props.store.length ? (
+          <ol type="1">
+            {this.props.store.map(item => (
+              <AdditionalFeature key={item.id} feature={item} addFeature={this.props.addFeature}/>
+            ))}
+          </ol>
+        ) : (
+          <p>Nice looking car!</p>
+        )}
+      </div>
+    )
+  }
 }
 
 const mapStateToProps = state => {
@@ -26,4 +31,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {  })(AdditionalFeatures)
+export default connect(mapStateToProps, { addFeature })(AdditionalFeatures)
