@@ -1,23 +1,15 @@
 import React from 'react'
 
-import Header from './components/Header'
-import AddedFeatures from './components/AddedFeatures'
-import AdditionalFeatures from './components/AdditionalFeatures'
-import Total from './components/Total'
+import TabNav from './components/TabNav'
+import AppRouter from './components/AppRouter'
 
 
 const App = () => {
 
   return (
-    <div className="boxes">
-      <div className="box">
-        <Header />
-        <AddedFeatures />
-      </div>
-      <div className="box add-features">
-        <AdditionalFeatures />
-        <Total />
-      </div>
+    <div>
+      <TabNav />
+      <AppRouter />
     </div>
   )
 }
