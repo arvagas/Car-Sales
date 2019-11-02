@@ -1,13 +1,15 @@
-import React from 'react';
+import React from 'react'
 
-const AddedFeature = props => {
+import { REMOVE_FEATURE } from '../actions/'
+
+const AddedFeature = ({ feature, removeFeature }) => {
   return (
     <li>
-      {/* Add an onClick to run a function to remove a feature */}
-      <button className="button">X</button>
-      {props.feature.name}
+      {/* <button className="button" onClick={() => removeFeature(feature)}>X</button> */}
+      <button className="button" onClick={() => removeFeature({ type: REMOVE_FEATURE, payload: feature })}>X</button>
+      {feature.name}
     </li>
-  );
-};
+  )
+}
 
-export default AddedFeature;
+export default AddedFeature
